@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Машинки</title>
+    <style>
+        .container {
+            font-size: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .table-cars {
+            margin-top: 100px;
+        }
+
+        .table-cars th {
+            font-weight: bold;
+        }
+
+        .table-cars td, .table-cars th {
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
+    <table class="table-cars">
+        <tr>
+            <th>Брэнд</th>
+            <th>Цвет</th>
+            <th>Цена</th>
+        </tr>
+        <th:block th:each="car : ${cars}">
+            <tr>
+                <td th:text="${car.brand}"></td>
+                <td th:text="${car.color}"></td>
+                <td th:text="${car.price}"></td>
+            </tr>
+        </th:block>
+    </table>
+</div>
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <a href="http://localhost:8080/spring_mvc_war_exploded/">ДОМАШНАЯЯ СТРАНИЦА</a>
+</div>
 
 </body>
 </html>
